@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistes per Busqueda</title>
+</head>
+<body>
+    {{#each artista}}
+        <h2>{{this.name}}</h2>
+        <img src="{{this.images.2.url}}" alt="images">
+        {{#if this.genres.length}}
+            <p>Generos:</p>
+                <ul>
+                {{#each this.genres}}
+                <li>{{this}}</li>
+                {{/each}}
+                </ul>
+        {{else}}
+            <p>Popularity: {{this.popularity}}</p>
+        {{/if}}
+        <hr>
+    {{/each}}
+</body>
+</html>
